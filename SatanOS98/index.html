@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SatanOS 98 - The Purgatory Manager</title>
+  <link rel="stylesheet" href="css/win98.css" />
+</head>
+<body>
+
+<div id="desktop" aria-label="Desktop">
+
+  <!-- Desktop Icons -->
+  <div class="icon" data-open="win-mail" title="SinMail Express">
+    <div class="ico"><img class="icoimg" src="assets/icons/mail.png" alt=""></div>
+    SinMail<br/>Express
+  </div>
+
+  <div class="icon" data-open="win-note" title="Soul_Record.txt">
+    <div class="ico"><img class="icoimg" src="assets/icons/record.png" alt=""></div>
+    Soul_Record<br/>.txt
+  </div>
+
+  <div class="icon" data-open="win-chm" title="Torture.chm">
+    <div class="ico"><img class="icoimg" src="assets/icons/help.png" alt=""></div>
+    Torture<br/>.chm
+  </div>
+
+  <div class="icon" data-open="win-punish" title="Punish.exe">
+    <div class="ico"><img class="icoimg" src="assets/icons/punish.png" alt=""></div>
+    Punish<br/>.exe
+  </div>
+
+  <div class="icon" data-open="win-calc" title="Calc 666">
+    <div class="ico"><img class="icoimg" src="assets/icons/calc.png" alt=""></div>
+    Calc<br/>666
+  </div>
+
+  <div class="icon" data-open="win-pics" title="SinPics">
+    <div class="ico"><img class="icoimg" src="assets/icons/pics.png" alt=""></div>
+    SinPics
+  </div>
+
+  <div class="icon" data-open="win-explorer" title="My Hell">
+    <div class="ico"><img class="icoimg" src="assets/icons/explorer.png" alt=""></div>
+    My Hell
+  </div>
+
+
+  <!-- WINDOWS -->
+
+  <!-- SinMail -->
+  <div id="win-mail" class="window bevel-out" style="left:80px;top:60px;">
+    <div class="titlebar" data-drag>
+      <div class="title">
+        <div class="mini-ico"><img src="assets/icons/mail.png" alt=""></div>
+        <span>SinMail Express</span>
+      </div>
+      <div class="win-controls">
+        <button class="btn98 tinybtn" data-minimize title="Minimize">_</button>
+        <button class="btn98 tinybtn" data-maximize title="Maximize">▢</button>
+        <button class="btn98 tinybtn" data-close title="Close">✕</button>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="split" style="height:100%;">
+        <div class="pane bevel-in-silver">
+          <div class="listItem sel" data-folder="inbox">📥 Inbox</div>
+          <div class="listItem" data-folder="outbox">📤 Outbox</div>
+          <div class="listItem" data-folder="trash">🗑 Trash</div>
+          <div class="menuSep"></div>
+          <div class="muted">Tip: open an email, then judge it in Punish.exe</div>
+        </div>
+        <div class="pane bevel-in-silver" style="display:flex;flex-direction:column;gap:6px;">
+          <div class="bevel-in" style="background:#fff;">
+            <div class="mailListHeader">
+              <div><b>Inbox</b> — Incoming Souls</div>
+              <div class="muted" id="mailCount">0 unread</div>
+            </div>
+            <div class="mailList" id="mailList" style="height:170px;"></div>
+          </div>
+          <div class="bevel-in" style="background:#fff;flex:1;min-height:0;">
+            <div class="preview" id="mailPreview">
+              <div class="muted">Select an email to preview the soul.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notepad -->
+  <div id="win-note" class="window bevel-out" style="left:140px;top:110px;width:520px;height:340px;">
+    <div class="titlebar" data-drag>
+      <div class="title">
+        <div class="mini-ico"><img src="assets/icons/record.png" alt=""></div>
+        <span>Soul_Record.txt - Notepad</span>
+      </div>
+      <div class="win-controls">
+        <button class="btn98 tinybtn" data-minimize title="Minimize">_</button>
+        <button class="btn98 tinybtn" data-maximize title="Maximize">▢</button>
+        <button class="btn98 tinybtn" data-close title="Close">✕</button>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="notepad" id="notepad">
+SOUL_RECORD.TXT
+
+No record loaded.
+
+Open a soul from SinMail, or select one in Punish.exe then click "Load Record".
+      </div>
+    </div>
+  </div>
+
+  <!-- CHM Help -->
+  <div id="win-chm" class="window bevel-out" style="left:220px;top:80px;width:560px;height:360px;">
+    <div class="titlebar" data-drag>
+      <div class="title">
+        <div class="mini-ico"><img src="assets/icons/help.png" alt=""></div>
+        <span>Torture.chm - Help</span>
+      </div>
+      <div class="win-controls">
+        <button class="btn98 tinybtn" data-minimize title="Minimize">_</button>
+        <button class="btn98 tinybtn" data-maximize title="Maximize">▢</button>
+        <button class="btn98 tinybtn" data-close title="Close">✕</button>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="chm">
+        <div class="pane bevel-in-silver chmList" id="sinList"></div>
+        <div class="chmBody" id="sinBody">
+          <h3>Welcome to Torture.chm</h3>
+          <div>Pick a sin on the left.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Punish.exe -->
+  <div id="win-punish" class="window bevel-out" style="left:300px;top:150px;width:520px;height:330px;">
+    <div class="titlebar" data-drag>
+      <div class="title">
+        <div class="mini-ico"><img src="assets/icons/punish.png" alt=""></div>
+        <span>Punish.exe</span>
+      </div>
+      <div class="win-controls">
+        <button class="btn98 tinybtn" data-minimize title="Minimize">_</button>
+        <button class="btn98 tinybtn" data-maximize title="Maximize">▢</button>
+        <button class="btn98 tinybtn" data-close title="Close">✕</button>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="bevel-in-silver group" style="height:100%;overflow:auto;">
+        <div style="font-size:12px;"><b>Execution Tool</b> — pick the correct punishment for the soul’s primary sin.</div>
+
+        <div class="formRow">
+          <div style="width:110px;font-size:12px;">Soul ID:</div>
+          <select id="soulSelect" style="flex:1;"></select>
+          <button class="btn98" id="loadRecordBtn">Load Record</button>
+        </div>
+
+        <div class="bevel-in" style="background:#fff;padding:8px;">
+          <div style="font-size:12px;"><b>Punishment Method</b></div>
+          <div class="radioList" id="punishRadios"></div>
+          <div class="hint">Matches are exact. Hell runs on strict equality.</div>
+        </div>
+
+        <div class="formRow" style="justify-content:space-between;">
+          <div class="muted" id="judgeHint">Tip: use Soul_Record.txt + Torture.chm.</div>
+          <button class="btn98" id="submitJudgmentBtn">Submit Judgment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Calc 666 -->
+  <div id="win-calc" class="window bevel-out" style="left:420px;top:90px;width:320px;height:360px;">
+    <div class="titlebar" data-drag>
+      <div class="title">
+        <div class="mini-ico"><img src="assets/icons/calc.png" alt=""></div>
+        <span>Calc 666</span>
+      </div>
+      <div class="win-controls">
+        <button class="btn98 tinybtn" data-minimize title="Minimize">_</button>
+        <button class="btn98 tinybtn" data-maximize title="Maximize">▢</button>
+        <button class="btn98 tinybtn" data-close title="Close">✕</button>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="calc">
+        <div class="calcDisplay" id="calcDisplay">0</div>
+        <div class="calcKeys" id="calcKeys"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SinPics -->
+  <div id="win-pics" class="window bevel-out" style="left:60px;top:260px;width:520px;height:330px;">
+    <div class="titlebar" data-drag>
+      <div class="title">
+        <div class="mini-ico"><img src="assets/icons/pics.png" alt=""></div>
+        <span>SinPics</span>
+      </div>
+      <div class="win-controls">
+        <button class="btn98 tinybtn" data-minimize title="Minimize">_</button>
+        <button class="btn98 tinybtn" data-maximize title="Maximize">▢</button>
+        <button class="btn98 tinybtn" data-close title="Close">✕</button>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="sxp">
+        <div class="sxpView" id="picsView">
+          <img id="picsImg" alt="">
+          <div id="picsFallback">[IMAGE CORRUPTED BY EVIL]</div>
+        </div>
+        <div class="sxpBar">
+          <button class="btn98" id="picsPrev">◀</button>
+          <div class="caption" id="picsCaption">...</div>
+          <button class="btn98" id="picsNext">▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Explorer -->
+  <div id="win-explorer" class="window bevel-out" style="left:640px;top:210px;width:520px;height:340px;">
+    <div class="titlebar" data-drag>
+      <div class="title">
+        <div class="mini-ico"><img src="assets/icons/explorer.png" alt=""></div>
+        <span>My Hell - Explorer</span>
+      </div>
+      <div class="win-controls">
+        <button class="btn98 tinybtn" data-minimize title="Minimize">_</button>
+        <button class="btn98 tinybtn" data-maximize title="Maximize">▢</button>
+        <button class="btn98 tinybtn" data-close title="Close">✕</button>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="explorer">
+        <div class="tree">
+          <div class="listItem sel" data-drive="C">🖴 (C:) Local Disk</div>
+          <div class="listItem" data-drive="A">💾 (A:) Floppy Disk (screaming)</div>
+          <div class="menuSep"></div>
+          <div class="muted">Folders may be… thermally uncooperative.</div>
+        </div>
+        <div class="files" id="fileGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"><div class="bevel-out"></div></div>
+
+  <!-- Overlay / BSOD -->
+  <div id="overlay">
+    <div id="bsod">
+      <h1>*** SATANOS 98 - A FATAL EXCEPTION HAS OCCURRED ***</h1>
+      <p>A problem has been detected and SatanOS has been shut down to prevent damage to your eternal employment.</p>
+      <p>Refresh the page to reboot. There is no “safe mode.”</p>
+      <div class="code">
+        STOP: 0xDEAD0666 (DOOM_METER_OVERFLOW)
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Taskbar -->
+<div id="taskbar" class="bevel-out" aria-label="Taskbar">
+  <button id="startBtn" class="btn98">
+    <span id="startBadge">S</span>
+    Start
+  </button>
+
+  <div id="tasks"></div>
+
+  <div id="tray">
+    <div id="status" class="bevel-in-silver">
+      <div><b>Day</b> <span id="dayNum">1</span></div>
+      <div><b>Time</b> <span id="gameTime">09:00 AM</span></div>
+      <div id="quotaText"><b>Quota</b> <span id="quotaNow">0</span>/<span id="quotaNeed">8</span></div>
+      <div id="doomWrap">
+        <b>Doom</b>
+        <div id="doomBarOuter" class="bevel-in-silver"><div id="doomBarInner"></div></div>
+        <span id="doomPct">0%</span>
+      </div>
+    </div>
+    <div id="clock" class="bevel-in-silver">--:--</div>
+  </div>
+</div>
+
+
+<!-- Start Menu -->
+<div id="startMenu" class="bevel-out">
+  <div class="menu">
+    <div class="menuItem" data-action="open" data-win="win-mail">📥 SinMail Express</div>
+    <div class="menuItem" data-action="open" data-win="win-punish">⚙ Punish.exe</div>
+    <div class="menuItem" data-action="open" data-win="win-chm">❓ Torture.chm</div>
+    <div class="menuSep"></div>
+    <div class="menuItem" data-action="clearsave">Clear Save</div>
+    <div class="menuItem" data-action="dummy">Settings</div>
+    <div class="menuItem" data-action="dummy">Help (lol)</div>
+    <div class="menuSep"></div>
+    <div class="menuItem" data-action="logoff">Log Off</div>
+  </div>
+</div>
+
+
+<!-- Data first, then main -->
+<script src="js/data/config.js"></script>
+<script src="js/data/names.js"></script>
+<script src="js/data/sins.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
